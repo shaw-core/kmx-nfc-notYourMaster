@@ -1,2 +1,2 @@
-# KMX_NFC_-not-your-master-
+# kmx-nfc-notYourMaster
 A project from 'Shadow Ship Studio'
