@@ -22,6 +22,6 @@ This project enables automatic audio playback through NFC-triggered web pages. B
    ```sh
    git clone https://github.com/shaw-core/kmx-nfc-notYourMaster.git
 2. Imediate URL(Write this URL into the NFC tag):
-   '''sh
+   ```sh
    https://shaw-core.github.io/kmx-nfc-notYourMaster/intermediate.html
 
