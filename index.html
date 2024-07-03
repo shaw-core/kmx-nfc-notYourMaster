@@ -14,15 +14,15 @@
         #playButton {
             padding: 20px;
             font-size: 20px;
-            background-color: #ccc; /* Initial grey color */
+            background-color: #ccc;
             color: white;
             border: none;
             cursor: pointer;
             border-radius: 5px;
-            display: none; /* Hide button by default */
+            display: none;
         }
         #playButton:hover {
-            background-color: #aaa; /* Darker grey on hover */
+            background-color: #aaa;
         }
     </style>
 </head>
@@ -36,18 +36,21 @@
         document.addEventListener('DOMContentLoaded', function() {
             var audio = document.getElementById('audioPlayer');
             var playButton = document.getElementById('playButton');
-            audio.play().then(() => {
-                audio.muted = false; // Unmute the audio after it starts playing
-            }).catch(error => {
-                console.error('Playback failed:', error);
-                playButton.style.display = 'block'; // Show the button if autoplay fails
-            });
 
-            playButton.addEventListener('click', function() {
-                audio.muted = false;
-                audio.play();
-                playButton.style.display = 'none'; // Hide the button after click
-            });
+            function attemptPlay() {
+                audio.play().then(() => {
+                    audio.muted = false;
+                }).catch(error => {
+                    console.error('Playback failed:', error);
+                    playButton.style.display = 'block';
+                });
+            }
+
+            attemptPlay();
+
+            window.addEventListener('focus', attemptPlay);
+
+            setTimeout(attemptPlay, 1000);
         });
     </script>
 </body>
