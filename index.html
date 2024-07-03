@@ -11,34 +11,21 @@
             align-items: center;
             background-color: #f0f0f0;
         }
-        #playButton {
-            padding: 20px;
-            font-size: 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            display: none; /* Hide the button */
-        }
-        #playButton:hover {
-            background-color: #45a049;
-        }
     </style>
 </head>
 <body>
-    <button id="playButton">Click to Play Audio</button>
     <audio id="audioPlayer" autoplay muted>
-        <source src="kmx not your master.mp3" type="audio/mpeg">
+        <source src="kmx_not_your_master.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             var audio = document.getElementById('audioPlayer');
+            audio.muted = true; // Start muted
             audio.play();
             setTimeout(() => {
-                audio.muted = false; // Unmute after 1 second
-            }, 1000);
+                audio.muted = false; // Unmute after a short delay
+            }, 1000); // Adjust the delay as needed
         });
     </script>
 </body>
