@@ -4,13 +4,19 @@
     <title>Playing Audio...</title>
 </head>
 <body>
-    <audio id="audioPlayer" controls autoplay muted>
-        <source src="kmx not your master.mp3.mp3" type="audio/mpeg">
+    <audio id="audioPlayer" autoplay>
+        <source src="kmx not your master.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <script>
-        document.getElementById('audioPlayer').muted = false;
-        document.getElementById('audioPlayer').play();
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var audio = document.getElementById('audioPlayer');
+            audio.muted = true;
+            audio.play();
+            setTimeout(() => {
+                audio.muted = false;
+            }, 1000); // Delay unmuting to help with autoplay
+        });
     </script>
 </body>
 </html>
