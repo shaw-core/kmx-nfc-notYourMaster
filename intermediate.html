@@ -4,9 +4,10 @@
     <title>Redirecting...</title>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // set the target url
             var targetUrl = "https://shaw-core.github.io/kmx-nfc-notYourMaster/index.html";
-            window.location.href = targetUrl;
+            setTimeout(function() {
+                window.location.href = targetUrl;
+            }, 1000); // +1s
         });
     </script>
 </head>
@@ -14,3 +15,4 @@
     <p>Redirecting...</p>
 </body>
 </html>
+
