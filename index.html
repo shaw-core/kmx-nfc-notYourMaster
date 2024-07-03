@@ -27,16 +27,14 @@
 </head>
 <body>
     <button id="playButton">Click to Play Audio</button>
-    <audio id="audioPlayer" controls style="display:none;">
+    <audio id="audioPlayer">
         <source src="kmx_not_your_master.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <script>
         document.getElementById('playButton').addEventListener('click', function() {
             var audio = document.getElementById('audioPlayer');
-            audio.style.display = "block";
             audio.play();
-            this.style.display = 'none'; // Hide the button after click
         });
     </script>
 </body>
